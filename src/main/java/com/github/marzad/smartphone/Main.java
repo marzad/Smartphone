@@ -15,8 +15,20 @@ public class Main {
         mysmartphone.addContact(new Friend("Marie","01736453426"));
         mysmartphone.addContact(new Friend("Thomas","01736453426"));
 
+        System.out.println("Position: "+ mysmartphone.getPosition());
+        mysmartphone.startRadio();
+        mysmartphone.stopRadio();
 
         System.out.println(mysmartphone.toString());
+
+        System.out.println(mysmartphone.getContact(3));
+
+        System.out.println(mysmartphone.getContactByName("Marie"));
+
+        mysmartphone.removeContactByName("Anton");
+
+        System.out.println(mysmartphone.getContacts());
+
     }
 
 

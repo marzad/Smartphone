@@ -68,7 +68,7 @@ public class Smartphone implements Radio, GPS{
 
     public Contact getContactByName(String name){
        for(Contact i:this.contacts){
-           if(i.getName().equals(name)){
+           if(i.getName()==name){
                return i;
            }
        }
@@ -76,9 +76,10 @@ public class Smartphone implements Radio, GPS{
     }
 
     public void removeContactByName(String name){
-        for(Contact i:this.contacts){
-            if(i.getName().equals(name)){
+        for (int i = 0; i < this.contacts.size(); i++) {
+            if(this.contacts.get(i).getName() == name){
                 this.contacts.remove(i);
+                break;
             }
         }
     }
