@@ -6,12 +6,12 @@ import java.util.List;
 public class Smartphone implements Radio, GPS{
     private String model;
     private String brand;
-    private List<Friend> contacts = new ArrayList<>();
+    private List<Contact> contacts = new ArrayList<>();
 
     public Smartphone() {
     }
 
-    public Smartphone(String brand, String model, List<Friend> contacts) {
+    public Smartphone(String brand, String model, List<Contact> contacts) {
         this.brand = brand;
         this.model = model;
         this.contacts = contacts;
@@ -42,8 +42,12 @@ public class Smartphone implements Radio, GPS{
         return brand;
     }
 
-    public List<Friend> getContacts() {
+    public List<Contact> getContacts() {
         return contacts;
+    }
+
+    public Contact getContact(int index){
+        return this.contacts.get(index);
     }
 
     public void setModel(String model) {
@@ -54,8 +58,29 @@ public class Smartphone implements Radio, GPS{
         this.brand = brand;
     }
 
-    public void setContacts(Friend contact) {
+    public void setContacts(List<Contact> contact) {
+        this.contacts = contact;
+    }
+
+    public void addContact(Contact contact){
         this.contacts.add(contact);
+    }
+
+    public Contact getContactByName(String name){
+       for(Contact i:this.contacts){
+           if(i.getName().equals(name)){
+               return i;
+           }
+       }
+       return null;
+    }
+
+    public void removeContactByName(String name){
+        for(Contact i:this.contacts){
+            if(i.getName().equals(name)){
+                this.contacts.remove(i);
+            }
+        }
     }
 
     @Override
