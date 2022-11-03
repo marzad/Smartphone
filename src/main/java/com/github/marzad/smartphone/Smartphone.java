@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Smartphone implements Radio, GPS{
-    private String model;
-    private String brand;
-    private List<Contact> contacts = new ArrayList<>();
+    private String model; // Smartphonemodel
+    private String brand; // Smartphonebrand
+    private List<Contact> contacts = new ArrayList<>(); // Contactlist
 
+    // Constructors
     public Smartphone() {
     }
 
-    public Smartphone(String brannd, String model){
+    public Smartphone(String brand, String model){
         this.brand = brand;
         this.model = model;
     }
@@ -21,6 +22,8 @@ public class Smartphone implements Radio, GPS{
         this.model = model;
         this.contacts = contacts;
     }
+
+    // Overrides-Methods
 
     @Override
     public String getPosition() {
@@ -38,7 +41,16 @@ public class Smartphone implements Radio, GPS{
         System.out.println("Radio stopped");
         return false;
     }
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", contacts=" + contacts +
+                '}';
+    }
 
+    // Getter and Setter
     public String getModel() {
         return model;
     }
@@ -50,7 +62,7 @@ public class Smartphone implements Radio, GPS{
     public List<Contact> getContacts() {
         return contacts;
     }
-
+    // Get a contact with a certain index
     public Contact getContact(int index){
         return this.contacts.get(index);
     }
@@ -67,10 +79,12 @@ public class Smartphone implements Radio, GPS{
         this.contacts = contact;
     }
 
+    // Add a contact to the list
     public void addContact(Contact contact){
         this.contacts.add(contact);
     }
 
+    // Get a contact with a certain name
     public Contact getContactByName(String name){
        for(Contact i:this.contacts){
            if(i.getName()==name){
@@ -80,6 +94,7 @@ public class Smartphone implements Radio, GPS{
        return null;
     }
 
+    // Rremove a contact with a certain name
     public void removeContactByName(String name){
         for (int i = 0; i < this.contacts.size(); i++) {
             if(this.contacts.get(i).getName() == name){
@@ -89,12 +104,5 @@ public class Smartphone implements Radio, GPS{
         }
     }
 
-    @Override
-    public String toString() {
-        return "Smartphone{" +
-                "model='" + model + '\'' +
-                ", brand='" + brand + '\'' +
-                ", contacts=" + contacts +
-                '}';
-    }
+
 }
