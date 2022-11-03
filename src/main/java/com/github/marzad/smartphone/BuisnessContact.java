@@ -4,6 +4,14 @@ public class BuisnessContact extends Contact{
     private String companyName;
     private String number;
 
+    public BuisnessContact() {
+    }
+
+    public BuisnessContact(String companyName, String number) {
+        this.companyName = companyName;
+        this.number = number;
+    }
+
     public String getCompanyName() {
         return companyName;
     }
@@ -22,9 +30,6 @@ public class BuisnessContact extends Contact{
 
     @Override
     public String toString() {
-        return "BuisnessContact{" +
-                "companyName='" + companyName + '\'' +
-                ", number='" + number + '\'' +
-                '}';
+        return this.companyName + " : " + this.number;
     }
 }
