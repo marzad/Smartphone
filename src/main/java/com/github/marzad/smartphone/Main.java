@@ -19,18 +19,20 @@ public class Main {
         mysmartphone.startRadio();
         mysmartphone.stopRadio();
 
+        // Ausgabe der gesamten Information
         System.out.println(mysmartphone.toString());
 
+        // Ausgabe eines bestimmtem Kontaktes
         System.out.println(mysmartphone.getContact(3));
 
+        // Suche und Ausgabe eines Kontaktes nach einem Namen
         System.out.println(mysmartphone.getContactByName("Marie"));
 
+        // Entfernen eine Kontaktes nach einem Namen
         mysmartphone.removeContactByName("Anton");
 
         System.out.println(mysmartphone.getContacts());
 
     }
-
-
 
 }
