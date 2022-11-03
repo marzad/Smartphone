@@ -1,18 +1,18 @@
 package com.github.marzad.smartphone;
 
 public class Friend extends Contact{
-    private int number;
+    private String number;
 
     public Friend() {
     }
 
-    public Friend(String name, int number) {
+    public Friend(String name, String number) {
         super.name = name;
         this.number = number;
     }
 
     @Override
     public String toString() {
-        return this.name + " : " + super.getName();
+        return super.getName()+ " : " + this.number;
     }
 }
