@@ -11,6 +11,11 @@ public class Smartphone implements Radio, GPS{
     public Smartphone() {
     }
 
+    public Smartphone(String brannd, String model){
+        this.brand = brand;
+        this.model = brand;
+    }
+
     public Smartphone(String brand, String model, List<Contact> contacts) {
         this.brand = brand;
         this.model = model;
